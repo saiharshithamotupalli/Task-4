@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style1.css"></head>
+<body>
+
+<nav>
+   <img src="logo.jpg" style="border-radius:40px; width:30px; height:30px;" align="right">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#career">Career</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+
+<div class="home-text">
+<h1>Sai Harshitha Motupalli</h1>
+<p>
+Aspiring Web Developer and Data Analytics <br>
+Pursuing MCA at Aditya University,<br>
+
+</p>
+</div>
+
+<div class="home-img">
+<img src="sai1.jpeg" alt="photo">
+</div>
+
+</section>
+
+
+<section id="about">
+
+<h2>About Me</h2><br>
+
+<p>
+I am passionate about web development and data analytics. 
+I enjoy creating responsive websites and learning modern technologies.<br>
+Motivated professional with strong problem-solving and
+analytic skills, seeking to contribute to a dynamic team 
+by delivering innnovative solutions,enhancing user
+ experience,and supporting organizational growth through
+continous learning and collaboration
+</p>
+
+<br>
+
+<h2>Skills</h2>
+
+<div class="skills">
+<i class="fa-brands fa-html5"></i>
+<i class="fa-brands fa-css3-alt"></i>
+<i class="fa-brands fa-java"></i>
+<i class="fa-brands fa-python"></i>
+</div>
+
+</section>
+
+
+<section id="projects">
+
+<h2>Projects</h2><br>
+
+<div class="project-container">
+
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>Responsive personal portfolio using HTML and CSS.</p>
+</div>
+
+<div class="card">
+<h3>Contact Form</h3>
+<p>Form validation using JavaScript.</p>
+</div>
+
+<div class="card">
+<h3>Career Resources</h3>
+<p>Interactive button to explore career websites.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="career">
+
+<h2>Career Resources </h2><br>
+
+<button onclick="openSite()">Explore Websites</button>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+<h2>Contact Me</h2><br>
+
+<form onsubmit="return validateForm()">
+
+<div id="form">
+
+<input type="text" placeholder="Enter Your Name" id="name">
+
+<input type="tel" placeholder="Enter Mobile Number" id="mobile" maxlength="10">
+
+<input type="email" placeholder="Enter Email" id="email">
+
+<button type="submit">Submit</button>
+
+</div>
+
+</form>
+
+</section>
+<script>
+
+/* FORM VALIDATION */
+
+function validateForm(){
+
+let name=document.getElementById("name").value;
+let mobile=document.getElementById("mobile").value;
+let email=document.getElementById("email").value;
+
+let namePattern=/^[a-zA-Z ]{6,}$/;
+let mobilePattern=/^[0-9]{10}$/;
+let emailPattern=/^\S+@\S+\.\S+$/;
+
+if(!namePattern.test(name)){
+    alert("Invalid Name");
+    return false;
+}
+
+if(!mobilePattern.test(mobile)){
+    alert("Invalid Mobile Number");
+    return false;
+}
+
+if(!emailPattern.test(email)){
+    alert("Invalid Email");
+    return false;
+}
+
+alert("Form Submitted Successfully");
+return true;
+
+}
+
+/* CAREER WEBSITE BUTTON */
+
+function openSite(){
+
+let sites=[
+"https://www.linkedin.com",
+"https://www.geeksforgeeks.org",
+"https://www.w3schools.com",
+"https://www.kaggle.com",
+"https://www.coursera.org"
+];
+
+let random=Math.floor(Math.random()*sites.length);
+
+window.open(sites[random],"_blank");
+
+}
+
+</script>
+<footer>
+<p> 2026 My Portfolio | All Rights Reserved</p>
+</footer>
+</body>
+</html>
+
